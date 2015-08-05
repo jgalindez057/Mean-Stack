@@ -7,7 +7,7 @@
 	</head>
 	<body ng-app="Main">
 		<div class="container" ng-controller="MainController">
-			<h1>Contactos</h1>
+			<h1>Contactos:</h1>
 			<table class="table">
 				<thead>
 					<tr>
@@ -25,11 +25,11 @@
 
 						<td><button type="submit" class="btn btn-default" ng-click="saveContact()">Agregar Contacto</button> <button type="submit" class="btn btn-default" ng-click="updateContact()">Actualizar Contacto</button> <button type="submit" class="btn btn-default" ng-click="clear()">Clear</button></td>
 					</tr>
-					<tr ng-repeat="user in users">
-						<td>{{user.name}}</td>
-						<td>{{user.email}}</td>
-						<td>{{user.phone}}</td>
-						<td><button type="submit" class="btn btn-success" ng-click="editContact(user)">Editar Contacto</button> <button type="submit" class="btn btn-danger" ng-click="deleteContact(user)">Eliminar Contacto</button></td>
+					<tr ng-repeat="contact in contacts">
+						<td>{{contact.name}}</td>
+						<td>{{contact.email}}</td>
+						<td>{{contact.phone}}</td>
+						<td><button type="submit" class="btn btn-success" ng-click="editContact(contact)">Editar Contacto</button> <button type="submit" class="btn btn-danger" ng-click="deleteContact(contact)">Eliminar Contacto</button></td>
 					</tr>
 				</tbody>
 			</table>

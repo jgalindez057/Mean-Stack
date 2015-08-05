@@ -1,13 +1,13 @@
-var User = require('../models/users');
+var Contact = require('../models/contacts');
 
 module.exports = function(server){
 	console.log('Home Controller funcionando');
 
 	server.get('/api', function (req, res){
-		User.find({})
-		.exec(function(err, user){
+		Contact.find({})
+		.exec(function(err, contact){
 			if (err) {console.log(err)};
-			res.json(user)
+			res.json(contact)
 		})
 	})
 
@@ -20,36 +20,36 @@ module.exports = function(server){
 	}
 
 	server.get('/api/:id', function (req, res){
-		var user = req.params.id;
-		User.findOne({ _id : user})
-		.exec(function(err, user){
-			res.json(user)
+		var contact = req.params.id;
+		Contact.findOne({ _id : contact})
+		.exec(function(err, contact){
+			res.json(contact)
 		})
 	})
 
 	server.post('/api', function (req, res){
 		console.log(req.body)
-		var newUser = new User(req.body);
+		var newContact = new Contact(req.body);
 
-		newUser.save(function (err, user){
+		newContact.save(function (err, contact){
 			if (err) {console.log(err)};
-			res.json(user);
+			res.json(contact);
 		})
 	})
 
 	server.put('/api/:id', function (req, res){
-		var user = req.params.id;
-		User.update({_id: user}, {$set: values(req) }, {new: true})
-		.exec(function(err, user){
-			res.json(user)
+		var contact = req.params.id;
+		Contact.update({_id: contact}, {$set: values(req) }, {new: true})
+		.exec(function(err, contact){
+			res.json(contact)
 		})
 	})
 
 	server.delete('/api/:id', function (req, res){
-		var user = req.params.id;
-		User.remove({ _id : user})
-		.exec(function(err, user){
-			res.json(user)
+		var contact = req.params.id;
+		Contact.remove({ _id : contact})
+		.exec(function(err, contact){
+			res.json(contact)
 		})
 	})
 }

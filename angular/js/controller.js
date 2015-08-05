@@ -3,7 +3,7 @@ app.controller('MainController', function($scope, $http){
 
 	$scope.showUsers = function(){
 		$http.get(backUrl + '/api').success(function (data){
-		$scope.users = data;
+		$scope.contacts = data;
 	  })
 	}
 	$scope.showUsers();
@@ -15,19 +15,19 @@ app.controller('MainController', function($scope, $http){
 	}
 
 	$scope.editContact = function(user){
-		$http.get(backUrl + '/api/' + user._id).success(function(data){
+		$http.get(backUrl + '/api/' + user._id).success(function (data){
 			$scope.contact = data;
 		})
 	}
 
 	$scope.updateContact = function(user){
-		$http.put(backUrl + '/api/' + $scope.contact._id, $scope.contact).success(function(data){
+		$http.put(backUrl + '/api/' + $scope.contact._id, $scope.contact).success(function (data){
 			$scope.showUsers();
 			$scope.contact = "";
 		})
 	}
 	$scope.deleteContact = function(user){
-		$http.delete(backUrl + '/api/' + user._id).success(function(data){
+		$http.delete(backUrl + '/api/' + user._id).success(function (data){
 			$scope.showUsers();
 		})
 	}
