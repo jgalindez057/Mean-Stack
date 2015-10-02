@@ -1,31 +1,23 @@
-# john-proyects
+## Simple CRUD utilizando el Mean-Stack.
 
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.0.0-rc8.
-
-## Getting Started
-
-### Prerequisites
+### Prerequisitos
 
 - [Git](https://git-scm.com/)
 - [Node.js and NPM](nodejs.org) >= v0.12.0
 - [Bower](bower.io) (`npm install --global bower`)
 - [Grunt](http://gruntjs.com/) (`npm install --global grunt-cli`)
-- [MongoDB](https://www.mongodb.org/) - Keep a running daemon with `mongod`
+- [MongoDB](https://www.mongodb.org/) - (Tener instalado mongoDB)
 
-### Developing
+### Desarrollo
 
-1. Run `npm install` to install server dependencies.
+1. Ejecuta `npm install` para instalar las dependencias del servidor(back-end).
 
-2. Run `bower install` to install front-end dependencies.
+2. Ejecuta `bower install` para instalar las dependencias del front-end.
 
-3. Run `mongod` in a separate shell to keep an instance of the MongoDB Daemon running
+4. Ejecuta `grunt serve` para que se inicialize el servidor de desarrollo. 
 
-4. Run `grunt serve` to start the development server. It should automatically open the client in your browser when ready.
+## Branch
 
-## Build & development
+1. Master: simple crud utilizando http para consumir el API.
 
-Run `grunt build` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `npm test` will run the unit tests with karma.
+2. api/resource: simple crud utilizando ng-resource para consumir el API, y ui-router como marco de enrutamiento para las vistas.
